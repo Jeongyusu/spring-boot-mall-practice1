@@ -1,0 +1,26 @@
+package shop.metacoding.mallprojectpractice1.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+
+@Entity
+@Getter
+@Setter
+@Table(name = "product_tb")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private Integer price;
+    private Integer qty;
+
+    @ManyToOne
+    private Seller seller;
+
+
+}
